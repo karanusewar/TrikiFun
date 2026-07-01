@@ -1,0 +1,22 @@
+# Trivy Configuration File
+# https://aquasecurity.github.io/trivy/v0.49/docs/references/configuration/
+
+# Scan format and target options
+format: table
+exit-code: 1 # Return exit-code 1 if vulnerabilities are found
+severity: HIGH,CRITICAL
+
+# Scanner settings
+scan:
+  scanners:
+    - vuln
+    - misconfig
+    - secret
+  file-patterns:
+    - dockerfile: '**/Dockerfile'
+
+vuln:
+  type: 'library'
+
+# Output configurations
+output: 'trivy-report.txt'

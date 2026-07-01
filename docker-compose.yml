@@ -70,6 +70,34 @@ services:
     networks:
       - devops-network
 
+  loki:
+    image: grafana/loki:2.9.4
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./monitoring/loki-config.yml:/etc/loki/local-config.yaml
+    networks:
+      - devops-network
+
+  promtail:
+    image: grafana/promtail:2.9.4
+    volumes:
+      - ./monitoring/promtail-config.yml:/etc/promtail/config.yml
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/log:/var/log
+    networks:
+      - devops-network
+
+  nexus:
+    image: sonatype/nexus3:3.66.0
+    ports:
+      - "8081:8081"
+      - "8082:8082" # Docker hosted repository port
+    volumes:
+      - nexusdata:/nexus-data
+    networks:
+      - devops-network
+
 networks:
   devops-network:
     driver: bridge
@@ -78,3 +106,4 @@ volumes:
   pgdata:
   redisdata:
   grafanadata:
+  nexusdata:

@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trikifun-frontend
+  labels:
+    app: trikifun
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: trikifun
+  template:
+    metadata:
+      labels:
+        app: trikifun
+    spec:
+      containers:
+        - name: frontend
+          image: trikifun:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          volumeMounts:
+            - name: nginx-config-volume
+              mountPath: /etc/nginx/conf.d
+      volumes:
+        - name: nginx-config-volume
+          configMap:
+            name: trikifun-config
+            items:
+              - key: nginx.conf
+                path: default.conf
