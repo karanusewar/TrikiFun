@@ -1,0 +1,1247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrikiFun – Children's Party Magic in Athens</title>
+    <link rel="icon" href="logo-top.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --yellow: #ffd93d;
+        --pink: #ff6b9d;
+        --blue: #4ecdc4;
+        --purple: #a78bfa;
+        --orange: #ff9a3c;
+        --green: #6bcb77;
+        --dark: #1a1a2e;
+        --white: #fffdf5;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        background: var(--white);
+        color: var(--dark);
+        overflow-x: hidden;
+      }
+
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255, 253, 245, 0.95);
+        backdrop-filter: blur(12px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 40px;
+        border-bottom: 3px solid var(--yellow);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .logo {
+        font-family: "Fredoka One", cursive;
+        font-size: 2rem;
+        color: var(--pink);
+        letter-spacing: 1px;
+        text-decoration: none;
+      }
+      .logo span {
+        color: var(--blue);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        align-items: center;
+      }
+
+      nav ul a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+      }
+      nav ul a:hover {
+        color: var(--pink);
+      }
+
+      .nav-cta {
+        background: var(--pink);
+        color: white !important;
+        padding: 10px 22px;
+        border-radius: 50px;
+        font-weight: 800 !important;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s !important;
+        box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+      }
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 107, 157, 0.5) !important;
+        color: white !important;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          #fff9e6 0%,
+          #fff0f5 50%,
+          #e8f8f5 100%
+        );
+        padding: 120px 40px 60px;
+      }
+
+      .hero-content {
+        max-width: 600px;
+        z-index: 2;
+        animation: slideIn 0.8s ease-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: var(--yellow);
+        color: var(--dark);
+        font-weight: 800;
+        font-size: 0.85rem;
+        padding: 6px 18px;
+        border-radius: 50px;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        font-family: "Fredoka One", cursive;
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        line-height: 1.1;
+        color: var(--dark);
+        margin-bottom: 22px;
+      }
+
+      .hero h1 .highlight {
+        color: var(--pink);
+        position: relative;
+        display: inline-block;
+      }
+
+      .hero h1 .highlight::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: var(--yellow);
+        z-index: -1;
+        border-radius: 4px;
+      }
+
+      .hero p {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 35px;
+        max-width: 480px;
+      }
+
+      .hero-btns {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: var(--pink);
+        color: white;
+        padding: 15px 35px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1rem;
+        text-decoration: none;
+        box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+        transition: all 0.2s;
+        display: inline-block;
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 107, 157, 0.5);
+      }
+
+      .btn-secondary {
+        background: white;
+        color: var(--dark);
+        padding: 15px 35px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1rem;
+        text-decoration: none;
+        border: 3px solid var(--dark);
+        transition: all 0.2s;
+        display: inline-block;
+      }
+      .btn-secondary:hover {
+        background: var(--dark);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      /* Floating shapes */
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.15;
+        animation: float 6s ease-in-out infinite;
+      }
+      .shape-1 {
+        width: 300px;
+        height: 300px;
+        background: var(--pink);
+        right: -50px;
+        top: 10%;
+        animation-delay: 0s;
+      }
+      .shape-2 {
+        width: 200px;
+        height: 200px;
+        background: var(--blue);
+        right: 200px;
+        bottom: 10%;
+        animation-delay: 2s;
+      }
+      .shape-3 {
+        width: 150px;
+        height: 150px;
+        background: var(--yellow);
+        right: 100px;
+        top: 50%;
+        animation-delay: 4s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+        }
+      }
+
+      /* Emoji bubbles */
+      .emoji-float {
+        position: absolute;
+        font-size: 2.5rem;
+        animation: floatEmoji 7s ease-in-out infinite;
+        user-select: none;
+      }
+      .e1 {
+        right: 25%;
+        top: 20%;
+        animation-delay: 0s;
+      }
+      .e2 {
+        right: 15%;
+        top: 45%;
+        animation-delay: 1.5s;
+      }
+      .e3 {
+        right: 38%;
+        top: 65%;
+        animation-delay: 3s;
+      }
+      .e4 {
+        right: 50%;
+        top: 30%;
+        animation-delay: 2s;
+      }
+
+      @keyframes floatEmoji {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-15px) scale(1.1);
+        }
+      }
+
+      /* STATS */
+      .stats {
+        background: var(--dark);
+        padding: 50px 40px;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        text-align: center;
+        animation: fadeIn 0.6s ease;
+      }
+
+      .stat-number {
+        font-family: "Fredoka One", cursive;
+        font-size: 3rem;
+        color: var(--yellow);
+        display: block;
+      }
+
+      .stat-label {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* SERVICES */
+      .section {
+        padding: 90px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-family: "Fredoka One", cursive;
+        font-size: clamp(2rem, 4vw, 3rem);
+        text-align: center;
+        margin-bottom: 12px;
+        color: var(--dark);
+      }
+
+      .section-sub {
+        text-align: center;
+        color: #777;
+        font-size: 1.05rem;
+        margin-bottom: 55px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 24px;
+        padding: 35px 28px;
+        text-align: center;
+        border: 3px solid transparent;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .service-card:nth-child(1)::before {
+        background: var(--pink);
+      }
+      .service-card:nth-child(2)::before {
+        background: var(--blue);
+      }
+      .service-card:nth-child(3)::before {
+        background: var(--yellow);
+      }
+      .service-card:nth-child(4)::before {
+        background: var(--purple);
+      }
+      .service-card:nth-child(5)::before {
+        background: var(--orange);
+      }
+      .service-card:nth-child(6)::before {
+        background: var(--green);
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        border-color: var(--yellow);
+      }
+
+      .service-icon {
+        font-size: 3rem;
+        margin-bottom: 18px;
+        display: block;
+      }
+
+      .service-card h3 {
+        font-family: "Fredoka One", cursive;
+        font-size: 1.3rem;
+        color: var(--dark);
+        margin-bottom: 10px;
+      }
+
+      .service-card p {
+        color: #777;
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+
+      .service-price {
+        display: inline-block;
+        margin-top: 15px;
+        background: #f5f5f5;
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: var(--dark);
+      }
+
+      /* WHY US */
+      .why-section {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        padding: 90px 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .why-section::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        background: var(--pink);
+        border-radius: 50%;
+        opacity: 0.05;
+      }
+
+      .why-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .why-section .section-title {
+        color: white;
+      }
+      .why-section .section-sub {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+      }
+
+      .why-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 35px 25px;
+        text-align: center;
+        transition: background 0.3s;
+      }
+      .why-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .why-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .why-card h4 {
+        font-family: "Fredoka One", cursive;
+        font-size: 1.1rem;
+        color: var(--yellow);
+        margin-bottom: 10px;
+      }
+
+      .why-card p {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      /* PACKAGES */
+      .packages-section {
+        padding: 90px 40px;
+        background: linear-gradient(180deg, var(--white) 0%, #fff5e6 100%);
+      }
+
+      .packages-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .packages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        align-items: start;
+      }
+
+      .package-card {
+        background: white;
+        border-radius: 28px;
+        padding: 40px 32px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        border: 3px solid transparent;
+        transition: all 0.3s;
+        position: relative;
+      }
+
+      .package-card.popular {
+        border-color: var(--pink);
+        transform: scale(1.04);
+      }
+
+      .popular-badge {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--pink);
+        color: white;
+        font-weight: 800;
+        font-size: 0.8rem;
+        padding: 5px 18px;
+        border-radius: 50px;
+        white-space: nowrap;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .package-name {
+        font-family: "Fredoka One", cursive;
+        font-size: 1.6rem;
+        color: var(--dark);
+        margin-bottom: 8px;
+      }
+
+      .package-price {
+        font-family: "Fredoka One", cursive;
+        font-size: 2.5rem;
+        color: var(--pink);
+        margin-bottom: 5px;
+      }
+
+      .package-price span {
+        font-size: 1rem;
+        color: #999;
+        font-family: "Nunito", sans-serif;
+        font-weight: 600;
+      }
+
+      .package-desc {
+        color: #777;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      .package-features {
+        list-style: none;
+        margin-bottom: 30px;
+      }
+
+      .package-features li {
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 0.92rem;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .package-features li::before {
+        content: "✓";
+        background: var(--green);
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+
+      .package-btn {
+        display: block;
+        text-align: center;
+        padding: 14px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: all 0.2s;
+        background: var(--dark);
+        color: white;
+      }
+      .package-btn:hover {
+        background: var(--pink);
+        transform: translateY(-2px);
+      }
+      .popular .package-btn {
+        background: var(--pink);
+      }
+      .popular .package-btn:hover {
+        background: #e05589;
+      }
+
+      /* TESTIMONIALS */
+      .testimonials {
+        padding: 90px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+      }
+
+      .testimonial-card {
+        background: white;
+        border-radius: 24px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        border-left: 5px solid var(--yellow);
+        transition: transform 0.3s;
+      }
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+      }
+      .testimonial-card:nth-child(2) {
+        border-left-color: var(--pink);
+      }
+      .testimonial-card:nth-child(3) {
+        border-left-color: var(--blue);
+      }
+
+      .stars {
+        color: var(--yellow);
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+      }
+
+      .testimonial-text {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #555;
+        font-style: italic;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .author-avatar {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: var(--yellow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+      }
+
+      .author-name {
+        font-weight: 800;
+        color: var(--dark);
+        font-size: 0.95rem;
+      }
+
+      .author-meta {
+        color: #999;
+        font-size: 0.8rem;
+      }
+
+      /* CONTACT */
+      .contact-section {
+        background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+        padding: 90px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-section::after {
+        content: "🎉";
+        position: absolute;
+        font-size: 15rem;
+        opacity: 0.05;
+        right: -40px;
+        bottom: -40px;
+      }
+
+      .contact-section h2 {
+        font-family: "Fredoka One", cursive;
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: white;
+        margin-bottom: 15px;
+      }
+
+      .contact-section p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .contact-options {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+
+      .contact-btn {
+        background: white;
+        color: var(--dark);
+        padding: 15px 35px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1rem;
+        text-decoration: none;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .contact-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-info {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95rem;
+      }
+      .contact-info a {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--dark);
+        padding: 50px 40px 30px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 50px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-family: "Fredoka One", cursive;
+        font-size: 1.8rem;
+        color: var(--pink);
+        margin-bottom: 12px;
+        display: block;
+      }
+      .footer-logo span {
+        color: var(--blue);
+      }
+
+      .footer-desc {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      .footer-h {
+        font-weight: 800;
+        color: white;
+        margin-bottom: 15px;
+        font-size: 1rem;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: var(--yellow);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 25px;
+        text-align: center;
+        font-size: 0.85rem;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 768px) {
+        nav {
+          padding: 12px 20px;
+        }
+        nav ul {
+          display: none;
+        }
+        .hero {
+          padding: 100px 20px 60px;
+        }
+        .emoji-float {
+          display: none;
+        }
+        .stats {
+          gap: 30px;
+          padding: 40px 20px;
+        }
+        .section {
+          padding: 60px 20px;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        .package-card.popular {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="#" class="logo">Triki<span>Fun</span></a>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Book Now 🎉</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">🏆 Athens #1 Kids Party Company</span>
+        <h1>
+          Making Every <span class="highlight">Party</span> Unforgettable!
+        </h1>
+        <p>
+          From magicians and animators to DJs and traditional Greek games —
+          TrikiFun brings joy, laughter, and magical memories to children's
+          parties across Athens & all of Greece.
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">Book Your Party 🎈</a>
+          <a href="#services" class="btn-secondary">See What We Do</a>
+        </div>
+      </div>
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="emoji-float e1">🎪</div>
+      <div class="emoji-float e2">🎭</div>
+      <div class="emoji-float e3">🎈</div>
+      <div class="emoji-float e4">✨</div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number">5000+</span>
+        <span class="stat-label">Happy Parties</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">400+</span>
+        <span class="stat-label">Games & Activities</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Fun Guaranteed</span>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <h2 class="section-title">Our Entertainment Services</h2>
+      <p class="section-sub">
+        Everything you need for the perfect kids' party, all under one roof!
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-icon">🎪</span>
+          <h3>Party Animators</h3>
+          <p>
+            Cheerful, energetic entertainers who bring fun and games for all age
+            groups. Your kids will love them!
+          </p>
+          <span class="service-price">From €90</span>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🎩</span>
+          <h3>Magicians</h3>
+          <p>
+            Incredible magic shows and comedy acts that leave children (and
+            adults!) completely amazed.
+          </p>
+          <span class="service-price">Available on request</span>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🎵</span>
+          <h3>DJs & Disco Party</h3>
+          <p>
+            From latest hits to 80s classics — our DJs make everyone dance, from
+            kids to grandparents!
+          </p>
+          <span class="service-price">From €120</span>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🎭</span>
+          <h3>Face Painting</h3>
+          <p>
+            Artistic face & body painting, lunatic hair braiding, water tattoos,
+            and balloon modelling.
+          </p>
+          <span class="service-price">Included in packages</span>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🏛️</span>
+          <h3>Traditional Greek Games</h3>
+          <p>
+            Unique cultural games that bring kids together in authentic Greek
+            fun and team spirit.
+          </p>
+          <span class="service-price">From €90</span>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🎠</span>
+          <h3>Game Rentals</h3>
+          <p>
+            Bouncy castles, inflatable slides, sports arenas, carousels & more —
+            by week or month!
+          </p>
+          <span class="service-price">Insane discounts!</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-section" id="why">
+      <div class="why-inner">
+        <h2 class="section-title">Why Choose TrikiFun?</h2>
+        <p class="section-sub">
+          We don't just do parties — we create memories that last a lifetime.
+        </p>
+        <div class="why-grid">
+          <div class="why-card">
+            <span class="why-icon">🎯</span>
+            <h4>All Ages Welcome</h4>
+            <p>
+              Tailored programs for babies, toddlers, kids 7–12, and even teens.
+              Everyone has fun!
+            </p>
+          </div>
+          <div class="why-card">
+            <span class="why-icon">🌟</span>
+            <h4>400+ Activities</h4>
+            <p>
+              Our entertainers bring a massive variety of games and activities
+              to every single event.
+            </p>
+          </div>
+          <div class="why-card">
+            <span class="why-icon">🛡️</span>
+            <h4>Safe & Professional</h4>
+            <p>
+              Our team is trained, insured, and dedicated to keeping children
+              safe while having fun.
+            </p>
+          </div>
+          <div class="why-card">
+            <span class="why-icon">🚀</span>
+            <h4>Fresh Ideas Always</h4>
+            <p>
+              We continuously update our entertainment with new trends and
+              creative concepts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="packages-section" id="packages">
+      <div class="packages-inner">
+        <h2 class="section-title">Party Packages</h2>
+        <p class="section-sub">Choose what works best for your celebration!</p>
+        <div class="packages-grid">
+          <div class="package-card">
+            <div class="package-name">Starter Party</div>
+            <div class="package-price">€90 <span>/ event</span></div>
+            <div class="package-desc">
+              Perfect for intimate gatherings and smaller celebrations.
+            </div>
+            <ul class="package-features">
+              <li>1 Entertainer / Animator</li>
+              <li>2 hours of fun activities</li>
+              <li>20+ games & activities</li>
+              <li>Face painting basics</li>
+              <li>Balloon modelling</li>
+            </ul>
+            <a href="#contact" class="package-btn">Get Started</a>
+          </div>
+          <div class="package-card popular">
+            <div class="popular-badge">⭐ Most Popular</div>
+            <div class="package-name">Super Party</div>
+            <div class="package-price">€250 <span>/ event</span></div>
+            <div class="package-desc">
+              The full experience with our legendary SUPER PARTY duo!
+            </div>
+            <ul class="package-features">
+              <li>2 Entertainers (SUPER DUET)</li>
+              <li>3–4 hours full program</li>
+              <li>Skits, gags & choreographies</li>
+              <li>DJ + Karaoke</li>
+              <li>Face painting & tattoos</li>
+              <li>Balloon show</li>
+              <li>Traditional Greek games</li>
+            </ul>
+            <a href="#contact" class="package-btn">Book Now 🎉</a>
+          </div>
+          <div class="package-card">
+            <div class="package-name">SPREAD IT</div>
+            <div class="package-price">€390 <span>/ event</span></div>
+            <div class="package-desc">
+              Ultimate all-in-one party experience for large groups.
+            </div>
+            <ul class="package-features">
+              <li>Full entertainer team</li>
+              <li>DJ + Disco party</li>
+              <li>Magician show</li>
+              <li>Game rentals included</li>
+              <li>Custom themed activities</li>
+              <li>Full 5 hours program</li>
+            </ul>
+            <a href="#contact" class="package-btn">Go All Out!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+      <h2 class="section-title">What Parents Say</h2>
+      <p class="section-sub">Over 5,000 happy families and counting!</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "TrikiFun made my daughter's 7th birthday absolutely magical! The
+            animators were incredible — all the kids were laughing the entire
+            time. We will definitely book again!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👩</div>
+            <div>
+              <div class="author-name">Maria K.</div>
+              <div class="author-meta">Athens, Greece</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "The SUPER PARTY package was worth every euro. Two entertainers, DJ,
+            games, face painting — my son said it was the best day of his life.
+            TrikiFun are true professionals!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👨</div>
+            <div>
+              <div class="author-name">Dimitris P.</div>
+              <div class="author-meta">Glyfada, Greece</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "We booked TrikiFun for our corporate family event — amazing! Even
+            the adults had so much fun. The traditional Greek games were a huge
+            hit. Highly recommend!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👩</div>
+            <div>
+              <div class="author-name">Elena T.</div>
+              <div class="author-meta">Kifisia, Greece</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <h2>Ready to Plan Your Party? 🎊</h2>
+      <p>
+        Contact us today and let's create the most magical celebration your kids
+        have ever seen!
+      </p>
+      <div class="contact-options">
+        <a href="tel:+302109602697" class="contact-btn">📞 Call Us Now</a>
+        <a href="mailto:info@trikifun.gr" class="contact-btn">✉️ Email Us</a>
+        <a href="#" class="contact-btn">💬 WhatsApp</a>
+      </div>
+      <div class="contact-info">
+        📍 Athens, Greece &nbsp;|&nbsp; 📞
+        <a href="tel:+302109602697">+30 210 960 2697</a> &nbsp;|&nbsp; ✉️
+        <a href="mailto:info@trikifun.gr">info@trikifun.gr</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <span class="footer-logo">Triki<span>Fun</span></span>
+          <p class="footer-desc">
+            Athens' most loved children's entertainment company. Bringing joy,
+            laughter, and magical memories to every party since 2010.
+          </p>
+        </div>
+        <div>
+          <div class="footer-h">Services</div>
+          <ul class="footer-links">
+            <li><a href="#">Party Animators</a></li>
+            <li><a href="#">Magicians</a></li>
+            <li><a href="#">DJs & Disco</a></li>
+            <li><a href="#">Face Painting</a></li>
+            <li><a href="#">Greek Games</a></li>
+            <li><a href="#">Game Rentals</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-h">Company</div>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Party Venues</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Cookies Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 TrikiFun — All Rights Reserved. Made with ❤️ for the happiest
+        kids in Greece!
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const target = document.querySelector(a.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // Nav shadow on scroll
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+        nav.style.boxShadow =
+          window.scrollY > 20
+            ? "0 8px 30px rgba(0,0,0,0.12)"
+            : "0 4px 20px rgba(0,0,0,0.08)";
+      });
+    </script>
+  </body>
+</html>
