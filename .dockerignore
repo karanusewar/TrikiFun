@@ -1,0 +1,10 @@
+node_modules
+coverage
+.eslintcache
+.git
+.gitignore
+*.md
+terraform/
+k8s/
+monitoring/
+scripts/
