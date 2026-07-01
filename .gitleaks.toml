@@ -1,0 +1,15 @@
+# Gitleaks configuration rules for TrikiFun
+[banner]
+banner = "gitleaks config"
+
+[[rules]]
+    id = "generic-api-key"
+    description = "Generic API Key"
+    regex = '''(?i)(key|api|token|secret|password|passwd|auth)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]|={1,3}|:={1,3}|:)(?:[\s|']|[\s|"])([0-9a-zA-Z\-_]{16,64})(?:['|"]|\s|\n|;)'''
+    entropy = 3.5
+    secretGroup = 2
+
+[[rules]]
+    id = "github-pat"
+    description = "GitHub Personal Access Token"
+    regex = '''ghp_[0-9a-zA-Z]{36,255}'''
